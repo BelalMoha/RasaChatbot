@@ -1,0 +1,177 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - interrupt
+  - thank
+  - translating_certificates
+  - select_certificate
+  - inquire_language_qualifications
+  - select_department
+  - ask_subject_equalizing
+  - inform_subject_completion
+  - inform_having_certificate
+  - inform_qualification
+  - inquire_extra_subjects
+  - set_semester_number
+  - inquire_financial_aid
+  - inform_residence_status
+
+entities:
+  - certificate_type
+  - department
+  - semester_number
+  - residence_status
+
+
+slots:
+
+  certificate_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: certificate_type
+
+  department:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: department
+  
+  semester_number:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: semester_number
+  
+  residence_status:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: residence_status
+
+responses:
+  utter_greet:
+  - text: "Hey! How can I help?"
+  - text: "Hey! How can I help you with your education journy?"
+
+  utter_default:
+  - text: Sorry. I did not understand you. Can you please repate it?
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Was that helpful?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you!"
+  - text: "Great, looking forward to hearing from you again!"
+  - text: "Great, good luck with your studies!"
+  - text: "Great, wish you all the best!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_certificate_type:
+  - text: "Whice kind of certificate you want to translate?"
+
+  utter_general_certificate:
+  - text: "Certainly! We offer translation services for certificates. Could you please specify the type of certificate you need assistance with? Is it a Language Certificate or a Subject Certificate?"
+
+  utter_language_certificate:
+  - text: "For language certificates, it's best to reach out to our Language Department. They will guide you through the process. Here is the link to the Language Department: x"
+
+  utter_subject_certificate:
+  - text: "If it's a subject certificate, we recommend contacting the Study Center. They can help you with equivalent subjects. Here is the link to the Study Center: y"
+
+  utter_certificate_default:
+  - text: "I'm not sure about that certificate."
+
+  utter_department:
+  - text: "For which department?"
+    
+  utter_informatics_language_requirements:
+  - text: "For the Informatics department, B2 language qualifications in either English or German are required."
+
+  utter_applied_science_language_requirements:
+  - text: "For the Applied Science department, B2 language qualifications in either English or German are required."
+
+  utter_physics_language_requirements:
+  - text: "For the Physics department, C1 language qualifications are necessary."
+
+  utter_general_language_requirements:
+  - text: "If you have language qualifications, please submit them during the admissions process. It will be considered as part of your application."
+
+  utter_ask_subject_equalizing:
+  - text: "To equalize subjects, do you have a corresponding certificate, have you already completed the subject, or do you possess an appropriate qualification?"
+
+  utter_already_did_subject:
+  - text: "If you have already completed the subject, please prepare a copy of your previous grades paper. You can submit it through our Study Center. [Here is the link to the Study Center](study.center)."
+
+  utter_have_corresponding_certificate:
+  - text: "For corresponding certificates, ensure they are in German. If you need assistance, you can inquire at our Student Help Center. [Here is the link to the Student Help Center](student.help)."
+
+  utter_have_appropriate_qualification:
+  - text: "If you possess an appropriate qualification, documents are required in German. For more details, visit our Student Help Center. [Here is the link to the Student Help Center](student.help)."
+
+  utter_ask_for_semester_number:
+  - text: "Could you please tell me your current semester number to provide accurate information about extra subjects?"
+
+  utter_semester_1_options:
+  - text: "You are currently able to apply for the language AWP subjects. Our university offers language courses in German, English, and Spanish. If you wish to apply, head to the Study Center: [Study Center](study.center)"
+
+  utter_semester_3_and_5_options:
+  - text: "You are currently able to apply for the language AWP subjects and our science electives. Our university offers language courses in German, English, and Spanish. We also offer an extra Physics, Maths, and Mechatronics subject. If you wish to apply, head to the Study Center: [Study Center](study.center)"
+
+  utter_general_info_on_extra_subjects:
+  - text: "To inquire about taking extra subjects, please provide your current semester number. Keep in mind that you can only participate in one elective in the first semester, and 2 in later semesters."
+
+  utter_invalid_semester_number:
+  - text: "Please provide a valid semester number."
+  
+  utter_extra_subjects:
+  - text: "In which Semester are you now?"
+  
+  utter_residence_status:
+  - text: "What is your current residence status? (e.g. EU citizen, Resident, Refugee, Immigrant)"
+  
+  utter_resident:
+  - text: "Unfortunately, non-EU citizens are not eligible for financial aid at this time."
+  
+  utter_refugee:
+  - text: "If you are a refugee, you are required to present documents related to your parent's employment and your current financial situation. Please visit our Student Help Center for assistance. Here is the link: student.help"
+  
+  utter_immigrant:
+  - text: "If you are an immigrant, you are required to present documents related to your parent's employment and your current financial situation. Please visit our Student Help Center for assistance. Here is the link: student.help"
+  
+  utter_eu_citizen:
+  - text: "As an EU citizen, you may be eligible for financial aid through the BAföG program. For more information, visit our Student Help Center. Here is the link: student.help"
+
+actions:
+  - action_translate_certificates
+  - action_provide_language_qualifications_info
+  - action_handle_subject_equalizing
+  - action_extra_subjects_info
+  - action_financial_aid_info
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

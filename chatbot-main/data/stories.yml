@@ -1,0 +1,194 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: certificate translation 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: translating_certificates
+  - action: utter_certificate_type
+  - intent: select_certificate
+  - slot_was_set:
+      - certificate_type: "general"  
+  - action: action_translate_certificates
+
+- story: certificate translation 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: translating_certificates
+  - action: utter_certificate_type
+  - intent: select_certificate
+  - slot_was_set:
+      - certificate_type: "subject certificate"  
+  - action: action_translate_certificates
+
+- story: certificate translation 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: translating_certificates
+  - action: utter_certificate_type
+  - intent: select_certificate
+  - slot_was_set:
+      - certificate_type: "language certificate"  
+  - action: action_translate_certificates
+
+- story: language qualification 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_language_qualifications
+  - action: utter_department
+  - intent: select_department
+  - slot_was_set:
+      - department: "informatics"  
+  - action: action_provide_language_qualifications_info
+
+- story: language qualification 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_language_qualifications
+  - action: utter_department
+  - intent: select_department
+  - slot_was_set:
+      - department: "applied science"  
+  - action: action_provide_language_qualifications_info
+
+- story: language qualification 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_language_qualifications
+  - action: utter_department
+  - intent: select_department
+  - slot_was_set:
+      - department: "physics"  
+  - action: action_provide_language_qualifications_info
+
+- story: User inquires about subject equalizing generally
+  steps:
+  - intent: ask_subject_equalizing
+  - action: utter_ask_subject_equalizing
+
+- story: User has already completed the subject
+  steps:
+  - intent: inform_subject_completion
+  - action: utter_already_did_subject
+
+- story: User has a corresponding certificate
+  steps:
+  - intent: inform_having_certificate
+  - action: utter_have_corresponding_certificate
+
+- story: User has appropriate qualification
+  steps:
+  - intent: inform_qualification
+  - action: utter_have_appropriate_qualification
+
+- story: extra subjects 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_extra_subjects
+  - action: utter_extra_subjects
+  - intent: set_semester_number
+  - slot_was_set:
+      - semester_number: "first"  
+  - action: action_extra_subjects_info
+
+- story: extra subjects 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_extra_subjects
+  - action: utter_extra_subjects
+  - intent: set_semester_number
+  - slot_was_set:
+      - semester_number: "third"
+  - action: action_extra_subjects_info
+
+- story: extra subjects 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_extra_subjects
+  - action: utter_extra_subjects
+  - intent: set_semester_number
+  - slot_was_set:
+      - semester_number: "fifth"  
+  - action: action_extra_subjects_info
+
+- story: financial aid 1 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_financial_aid
+  - action: utter_residence_status
+  - intent: inform_residence_status
+  - slot_was_set:
+      - residence_status: "resident"  
+  - action: action_financial_aid_info
+
+- story: financial aid 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_financial_aid
+  - action: utter_residence_status
+  - intent: inform_residence_status
+  - slot_was_set:
+      - residence_status: "refugee"  
+  - action: action_financial_aid_info
+
+- story: financial aid 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_financial_aid
+  - action: utter_residence_status
+  - intent: inform_residence_status
+  - slot_was_set:
+      - residence_status: "immigrant"  
+  - action: action_financial_aid_info
+
+- story: financial aid 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_financial_aid
+  - action: utter_residence_status
+  - intent: inform_residence_status
+  - slot_was_set:
+      - residence_status: "EU citizen"  
+  - action: action_financial_aid_info

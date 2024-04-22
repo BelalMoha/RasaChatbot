@@ -1,0 +1,242 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - servus
+    - moin
+    - guten tag
+    - gm
+    - what's up
+
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - auf wiedersehen
+    - aud wiederschauen
+    - wiederschauen
+    - wiedersehen
+    - ciao
+    - tschüss
+    - gute nacht
+    - bye
+    - goodbye
+    - schönen tag noch
+    - schönen tag
+    - schönen abend
+    - bye bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - Y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - for sure
+    - j
+    - ja
+    - ja bitte
+    - yup
+    - jawohl
+    - das wäre gut
+    - das wäre schön
+    - natürlich
+    - klingt gut
+    - freilich
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - n
+    - nein
+    - nope
+    - Nee
+    - nein danke
+    - niemals
+    - bitte nicht
+    - nie
+    - auf keinen fall
+    - bestimmt nicht
+    - sicher nicht
+
+- intent: thank
+  examples: |
+    - thanks
+    - thnak you 
+    - danke
+    - danke dir
+    - vielen Dank
+    - merci
+    - ich bedanke mich
+    - alles klar danke
+    - perfect thanks
+    - many thanks
+    - perfekt danke
+      
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - sounds good
+
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: interrupt
+  examples: |
+    - thanks, that's it
+    - danke, das war es
+    - abbrechen
+    - danke für deine Hilfe
+    - ok danke
+    - ok thanks
+    - no thanks
+    - cancel
+    - nein
+    - nein danke
+
+
+
+
+- intent: translating_certificates
+  examples: |
+    - I need to translate my certificates.
+    - Can you help me with certificate translation?
+    - I have a certificate that needs translating.
+
+- intent: select_certificate
+  examples: |
+    - I have a [language certificate](certificate_type) to translate
+    - I have a [subject certificate](certificate_type) to translate
+    - I have a [general certificate](certificate_type) to translate
+
+- intent: inquire_language_qualifications
+  examples: |
+    - Can you tell me what language qualifications I need?
+    - What language qualifications are required for admission?
+    - Do I need to submit language qualifications?
+
+- intent: select_department
+  examples: |
+    - I am applying to the [informatics](department) department.
+    - I want to know about language qualifications for [applied science](department).
+    - Do you have specific language requirements for the [physics](department) department?
+
+- intent: ask_subject_equalizing
+  examples: |
+    - Can you tell me about subject equalizing?
+    - How do I equalize my subjects?
+    - I need information on subject equalization.
+
+- intent: inform_subject_completion
+  examples: |
+    - I have already completed the subject.
+    - I already did this subject in my previous course.
+    - The subject has been completed by me.
+
+- intent: inform_having_certificate
+  examples: |
+    - I have a corresponding certificate.
+    - There is a certificate I possess for this.
+    - I got a certificate related to this subject.
+
+- intent: inform_qualification
+  examples: |
+    - I have the appropriate qualification.
+    - I possess the necessary qualification for this.
+    - I am qualified in this area.
+
+- intent: inquire_extra_subjects
+  examples: |
+    - Can I take extra subjects this semester?
+    - What extra subjects are available for me?
+    - I'd like to know about extra course options.
+
+- intent: set_semester_number
+  examples: |
+    - I am in my [first](semester_number) semester
+    - This is my [third](semester_number) semester
+    - I'm currently in [fifth](semester_number) semester
+
+- intent: inquire_financial_aid
+  examples: |
+    - Can I get financial aid?
+    - What are the options for financial assistance?
+    - Am I eligible for any financial support?
+
+- intent: inform_residence_status
+  examples: |
+    - I am a [resident](residence_status)
+    - My status is [refugee](residence_status)
+    - I am an [immigrant](residence_status)
+    - I am an [EU citizen](residence_status)
+
+
+
+
