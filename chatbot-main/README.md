@@ -1,6 +1,4 @@
-Belal Mohamed Matrikelnummer : 22212068 
-
-Aly Abdelhamid Matrikelnummer: 22111192
+Belal Mohamed
 
 # University Integration Assisstant
 
@@ -66,14 +64,13 @@ In the actions folder, the __init__.py is the initialisation of the bot, and act
 
 ## Work Done
 
-Student 1: Use Cases, Dialogue Flow, Personas, Dialogue Examples, Domain(first version)
+Use Cases, Dialogue Flow, Personas, Dialogue Examples, Domain(first version)
+Domain(final version), yml implementation
 
-Student 2: Domain(final version), yml implementation
-
-Both: Custom actions
+Custom actions
 
 ## Missing Parts
 
-Our project had a 6th use case. It was removed towards the end because of problems during implementation. 
+The project had a 6th use case. It was removed towards the end because of problems during implementation. 
 
-Currently, our first Custom action, `ActionTranslateCertificates`, currently jumps directly to the 'else' clause in our action, so it doesn't work. 
+Currently, the first Custom action, `ActionTranslateCertificates`, currently jumps directly to the 'else' clause in our action, so it doesn't work. 
